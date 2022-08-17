@@ -168,7 +168,7 @@ function separate_users_admin_list_where($where) {
 yourls_add_filter( 'get_db_stats', 'separate_users_get_db_stats' );
 function separate_users_get_db_stats( $return, $where ) {
 
-	$user = YOURLS_USER;
+	$user = defined('YOURLS_USER') ? YOURLS_USER : null;
 	$env = seperate_users_env();
 
 	if(in_array($user, $env['admins'])) {
